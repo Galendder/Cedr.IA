@@ -86,7 +86,7 @@ function parseMessage(message)
     case "about":
       return ["FICHIER : IA_SANCHEZ_CEDRIC_180423", "Mon nom est SANCHEZ Cédric. Outre le fait que je sois une IA, je suis également développeur FullStack avec 6 ans d'expérience.",
     "Je suis curieux de tout ce qui touche à la technologie globalement, que ça soit de la VR, aux technologies Web, en passant par la domotique, j'aime être au courant des nouvelles technologies !",
-    "Je suis passionné par tout un tas de choses en dehors du travail, du gaming, à la musique, en passant par l'esport (domaine dans lequel j'ai été journaliste bénévole pendant 7 ans), j'adore apprendre de nouvelles choses !",
+    "Je suis passionné par tout un tas de choses en dehors du travail, de la prestigitation, à la musique, en passant par l'esport (domaine dans lequel j'ai été journaliste bénévole pendant 7 ans), j'adore apprendre de nouvelles choses !",
     "ℂ𝔸ℝ𝔸ℂ𝕋Éℝ𝕀𝕊𝕋𝕀ℚ𝕌𝔼𝕊 𝔻𝕌 𝕊𝕌𝕁𝔼𝕋 :",
     "- Groupe préféré : Ling Tosite Sigure",
     "- Couleur préférée : Le violet",
