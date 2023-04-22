@@ -97,7 +97,7 @@ function parseMessage(message)
     case "why":
       return ["Vous savez, je pense qu'il n'y a pas de bonnes ou de mauvaises candidatures. Postuler chez Waalaxy, c'est avant tout des rencontres...",
     "Votre entreprise m'a été conseillé par une amie, et après recherche sur cette dernière, votre stack technique et votre environnement me plait énormément !",
-    "L'ambiance de travail semble convenir parfaitement à ce que je recherche, je pense que l'esprit d'équipe et la camaraderie est un élément essentiel au travail ! Nous passons 7h+ par jour avec des gens, il est important que le côté social soit mis en avant !",
+    "L'ambiance de travail semble convenir parfaitement à ce que je recherche, je pense que l'esprit d'équipe et la camaraderie sont des éléments au travail ! Nous passons 7h+ par jour avec des gens, il est important que le côté social soit mis en avant !",
     "De plus ça me permettra de me lancer dans de nouveaux challenges sur de nouvelles technologies (tel que React que je connais mais que je n'ai pas pu expérimenter en milieu professionnel)",
     "(C'est aussi pour ça que cette IA est faite en React, pour me remettre le pied à l'étrier sur ce framework qui me plait beaucoup).",
     "De plus, les nombreux avantages (télétravail partiel, horaires variables, confort de travail...) que proposent Waalaxy sont un gros plus pour moi !"];
