@@ -1,8 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function App() {
+  useEffect(() => {
+    var messagesDiv = document.getElementById("messages-div");
+    if (messagesDiv)
+    {
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+  })
   const [messagesShown, setMessagesShown] = useState(
     ["『M』『I』『S』『S』『I』『O』『N』 『W』『A』『A』『L』『A』『X』『Y』",
       "Bonjour", 
@@ -10,7 +17,6 @@ export default function App() {
   "N'ayez pas peur, je ne mord pas",
   "Si vous souhaitez communiquer avec moi, je vous conseille de taper \"help\"..."]);
   let messages = [];
-  console.log(messagesShown);
   const userTextBox = userMessageText(onTextChange);
   messages = writeMessages(messagesShown);
 
@@ -20,11 +26,16 @@ export default function App() {
       if (messages[i].includes("[LINK]"))
       {
         let link = messages[i].substring(6);
-        formattedMessages.push(<a class="app-link message" href={link}>{link}</a>, <br/>);
+        formattedMessages.push(<a className="app-link message" href={link}>{link}</a>, <br/>);
+      }
+      else if (messages[i].startsWith("USER >>"))
+      {
+        formattedMessages.push(<br/>);
+        formattedMessages.push(<span className='user-message message' key={i}>{messages[i]}</span>, <br/>);
       }
       else
       {
-      formattedMessages.push(<span className='message' key={i}>{messages[i]}</span>, <br/>);
+        formattedMessages.push(<span className='message' key={i}>{messages[i]}</span>, <br/>);
       }
 
     }
@@ -41,9 +52,6 @@ export default function App() {
   {
     if (event.keyCode === 13) 
     {
-      console.log(event);
-      console.log(messages);
-      console.log(messagesShown);
       messagesShown.push("USER >> " + event.target.value);
       let answers = parseMessage(event.target.value);
       for (let index = 0; index < answers.length; index++) {
@@ -56,9 +64,10 @@ export default function App() {
     }
   }
 
+
   return (
     <div className="App">
-      <div class="messages-container">
+      <div id="messages-div" class="messages-container">
         {messages}
       </div>
       {userTextBox}
@@ -86,7 +95,9 @@ function parseMessage(message)
     case "about":
       return ["FICHIER : IA_SANCHEZ_CEDRIC_180423", "Mon nom est SANCHEZ Cédric. Outre le fait que je sois une IA, je suis également développeur FullStack avec 6 ans d'expérience.",
     "Je suis curieux de tout ce qui touche à la technologie globalement, que ça soit de la VR, aux technologies Web, en passant par la domotique, j'aime être au courant des nouvelles technologies !",
-    "Je suis passionné par tout un tas de choses en dehors du travail, de la prestigitation, à la musique, en passant par l'esport (domaine dans lequel j'ai été journaliste bénévole pendant 7 ans), j'adore apprendre de nouvelles choses !",
+    "Je suis passionné par tout un tas de choses en dehors du travail, de la prestigitation, à la musique, en passant par l'esport ",
+    "(domaine dans lequel j'ai été journaliste bénévole pendant 7 ans), j'adore apprendre de nouvelles choses !",
+    "",
     "ℂ𝔸ℝ𝔸ℂ𝕋Éℝ𝕀𝕊𝕋𝕀ℚ𝕌𝔼𝕊 𝔻𝕌 𝕊𝕌𝕁𝔼𝕋 :",
     "- Groupe préféré : Ling Tosite Sigure",
     "- Couleur préférée : Le violet",
@@ -97,7 +108,8 @@ function parseMessage(message)
     case "why":
       return ["Vous savez, je pense qu'il n'y a pas de bonnes ou de mauvaises candidatures. Postuler chez Waalaxy, c'est avant tout des rencontres...",
     "Votre entreprise m'a été conseillé par une amie, et après recherche sur cette dernière, votre stack technique et votre environnement me plait énormément !",
-    "L'ambiance de travail semble convenir parfaitement à ce que je recherche, je pense que l'esprit d'équipe et la camaraderie sont des éléments au travail ! Nous passons 7h+ par jour avec des gens, il est important que le côté social soit mis en avant !",
+    "L'ambiance de travail semble convenir parfaitement à ce que je recherche, je pense que l'esprit d'équipe et la camaraderie sont des éléments au travail !",
+    "Nous passons 7h+ par jour avec des gens, il est important que le côté social soit mis en avant !",
     "De plus ça me permettra de me lancer dans de nouveaux challenges sur de nouvelles technologies (tel que React que je connais mais que je n'ai pas pu expérimenter en milieu professionnel)",
     "(C'est aussi pour ça que cette IA est faite en React, pour me remettre le pied à l'étrier sur ce framework qui me plait beaucoup).",
     "De plus, les nombreux avantages (télétravail partiel, horaires variables, confort de travail...) que proposent Waalaxy sont un gros plus pour moi !"];
@@ -108,7 +120,8 @@ function parseMessage(message)
     "À la fin de la formation, j'ai pu ensuite intégré Septeo Avocats (anciennement SECIB) qui m'a permis d'apprendre de nombreux langages et de nombreuses technologies.",
     "J'ai tout d'abord débuté sur du client lourd en VB6 (interopé avec du C#)/Winforms/SQL Server",
     "Mais dans un besoin de renouveau, j'ai proposé quelques années plus tard que l'on passe à du micro-service web.",
-    "De ce fait, j'ai pu apprendre plus profondément HTML/CSS/SASS/SCSS/Typescript et Angular pour le côté front, et NodeJS/Asp.Net Core pour le côté Backend. J'ai également fait un peu de MongoDB sur notre premier projet.",
+    "De ce fait, j'ai pu apprendre plus profondément HTML/CSS/SASS/SCSS/Typescript et Angular pour le côté front, et NodeJS/Asp.Net Core pour le côté Backend. ",
+    "J'ai également fait un peu de MongoDB sur notre premier projet.",
     "Cette expérience web aura duré 4 ans, et j'ai également pu découvrir les tenants et aboutissants du CI/CD, notamment sur le côté monitoring et pipeline de déploiement."];
 
     case "next":

@@ -1,16 +1,3 @@
-.app-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .messages-container
 {
   position: absolute;
@@ -25,8 +12,17 @@
 {
   font-family:'Lucida Console';
   color:lawngreen;
+  overflow: hidden;
 }
 
+.app-link {
+  color: #61dafb;
+}
+
+.user-message
+{
+  color: grey;
+}
 
 #user-input-textbox
 {
