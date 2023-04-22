@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Cedr.iA/static/css/main.1780edd7.css",
-    "main.js": "/Cedr.iA/static/js/main.bd871e50.js",
-    "static/media/logo.svg": "/Cedr.iA/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Cedr.iA/index.html",
-    "main.1780edd7.css.map": "/Cedr.iA/static/css/main.1780edd7.css.map",
-    "main.bd871e50.js.map": "/Cedr.iA/static/js/main.bd871e50.js.map"
+    "main.css": "/Cedr.IA/static/css/main.1780edd7.css",
+    "main.js": "/Cedr.IA/static/js/main.64fc8240.js",
+    "static/media/logo.svg": "/Cedr.IA/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Cedr.IA/index.html",
+    "main.1780edd7.css.map": "/Cedr.IA/static/css/main.1780edd7.css.map",
+    "main.64fc8240.js.map": "/Cedr.IA/static/js/main.64fc8240.js.map"
   },
   "entrypoints": [
     "static/css/main.1780edd7.css",
-    "static/js/main.bd871e50.js"
+    "static/js/main.64fc8240.js"
   ]
 }
